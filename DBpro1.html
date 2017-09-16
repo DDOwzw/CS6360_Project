@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DB_Project</title>
+</head>
+<body>
+	<h1>Entity</h1>
+	<ol>
+		<li>employees
+			<ul>
+				<li>employee_ID</li>
+				<li>name</li>
+				<li>age</li>
+				<li>address<--Composite
+					<ul>
+						<li>street number</li>
+						<li>street name</li>
+						<li>city</li>
+						<li>state</li>
+						<li>zip code</li>
+					</ul></li>
+				<li>salary rate</li>
+				<li><strong><font color = "red">sub entity-job functions:</font></strong>
+					<ol>
+						<li><font color = "red">management</font>
+							<ul>
+								<li>title:
+									<ul>
+									<li>general manager</li>
+									<li>customer relationship manager</li>
+									<li>revenue executive</li>
+									<li>event manager</li>
+									<li>etc</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li><font color = "red">receptionist</font>
+							<ul>
+								<li>language</li>
+							</ul>
+						</li>
+
+						<li><font color = "red">dining</font>
+							<ul>
+								<li>shift
+									<ul>
+										<li>morning</li>
+										<li>afternoon</li>
+										<li>evening</li>
+										<li>night</li>
+									</ul>
+								</li>
+								<li>type
+									<ul>
+										<li>lounge/bar</li>
+										<li>fine dining restaurant</li>
+										<li>buffet</li>
+										<li>catering</li>
+										<li>etc</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li><font color = "red">housekeeping -----><font color = "green">clean hotel rooms</font></font>
+							<ul>
+							<li>housekeeping_experience_years<--int [0,50]</li>
+							</ul>
+						</li>
+						<li><font color = "red">concierge</font>
+							<ul>
+							<li>concierge_experience_years<--int [0,50]</li>
+							</ul>
+						</li>
+						<li><font color = "red">tech support</font>
+							<ul>
+							<li>tech support's licenses</li>
+							</ul>
+						</li>
+						<li><font color = "red">accountants</font>
+							<ul>
+							<li>accountants' licenses</li>
+							</ul>
+						</li>
+					</ol></li>
+			</ul>
+		</li>
+		<li>clients<--has two subentity
+			<ol><li>customer_ID</li>
+				<li><font color = "red">individuals</font>
+					<ul>
+						<li>Indi_name</li>
+						<li>Indi_sex</li>
+						<li><strong><em><font color = "gold">phone ((XXX)XXX-XXXX) (mult-val)</font></em></strong></li>
+						<li>birthday (MM/DD/YYYY)</li>
+					</ul>
+				</li>
+				<li><font color = "red">organizations</font>
+					<ul>
+						<li>???dir_bill_account???</li>
+					</ul>
+				</li>
+			</ol>
+		</li>
+
+		<li>membership
+			<ul>
+				<li>membership_number</li>
+			</ul>
+		</li>
+
+		<li>rooms
+			<ul>
+				<li>room_number</li>
+				<li>bed type</li>
+				<li>room type</li>
+				<li>per-night price (USD)</li>
+			</ul>
+		</li>
+
+		<li>events
+			<ul>
+				<li>Eve_ID</li>
+				<li>Eve_deposit</li>
+				<li>Eve_date</li>
+				<li>Eve_time</li>
+				<li>Eve_manager_id</li>
+			</ul>
+		</li>
+
+		<li><font color="green">has(R) <<----individual, membership---->>
+		</font></li>
+
+		<li><font color="green">holds(R) <<----organization, event---->>
+		</font></li>
+
+		<li><font color="green">bill_for_event(R) <<----organzation, accountant---->>
+			<ul>
+				<li>Event_bill_ID</li>
+				<li>Bill_event_Date_issued(MM/DD/YYYY)</li>
+				<li>bill_event_amount(USD)</li>
+				<li><font color = "blue"><em><strong>Bill_evemt_payment_ID: (multi_val)</strong></em>
+					<ul>
+						<li>type_of_payment</li>
+						<li>date</li>
+						<li>time</li>
+						<li>amount_of_event_payment</li>
+					</ul>
+				</font></li>
+			</ul>
+		</font></li>
+
+		<li><font color = "green">serve(R) <<----employee, event----->>
+			<ul>on_call speaker</ul>
+			<ul>on_call number</ul>
+		</font></li>
+
+
+
+		<li><font color="green">check_in(R) <<----client, receptionist, rooms---->>
+			<ul>
+				<li>check_in_data(MM/DD/YYYY)</li>
+				<li>check_in_time(HH-MM-SS)</li>
+				<li>key type (card or digital)</li>
+				<li>lounge(Y/N)</li>
+				<li>length of stay</li>
+			</ul>
+		</font></li>
+
+		<li><font color="green">check_out_bill(R) <<----individual, rooms---->>
+			<ul>
+				<li>check_out_bill_issued date </li>
+				<li>check_in date</li>
+				<li>check_out date</li>
+				<li>check_out_bill-amount(USD)</li>
+				<li><font color = "blue"><em><strong>check_out_payment_ID: (multi_val)</strong></em>
+					<ul>
+						<li>COP_date</li>
+						<li>COP_time</li>
+						<li>COP_amount of payment</li>
+					</ul>
+				</font></li>
+			</ul>
+		</font></li>
+
+			
+	</ol>
+</body>
+</html>
