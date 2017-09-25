@@ -2,13 +2,18 @@
 <html>
 <head>
 	<title>DB_Project</title>
+	<style type="text/css">
+		#key {
+			border: 3px solid orange;
+		}
+	</style>
 </head>
 <body>
 	<h1>Entity</h1>
 	<ol>
 		<li>employees
 			<ul>
-				<li>employee_ID</li>
+				<li id="key">employee_ID</li>
 				<li>name</li>
 				<li>age</li>
 				<li>address<--Composite
@@ -86,7 +91,7 @@
 			</ul>
 		</li>
 		<li>clients<--has two subentity
-			<ol><li>customer_ID</li>
+			<ol><li id="key">customer_ID</li>
 				<li><font color = "red">individuals</font>
 					<ul>
 						<li>Indi_name</li>
@@ -105,13 +110,17 @@
 
 		<li>membership
 			<ul>
-				<li>membership_number</li>
+				<li id="key">membership_number</li>
 			</ul>
+		</li>
+
+		<li>event_staff
+			
 		</li>
 
 		<li>rooms
 			<ul>
-				<li>room_number</li>
+				<li id="key">room_number</li>
 				<li>bed type</li>
 				<li>room type</li>
 				<li>per-night price (USD)</li>
@@ -120,7 +129,7 @@
 
 		<li>events
 			<ul>
-				<li>Eve_ID</li>
+				<li id="key">Eve_ID</li>
 				<li>Eve_deposit</li>
 				<li>Eve_date</li>
 				<li>Eve_time</li>
