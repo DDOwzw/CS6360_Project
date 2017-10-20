@@ -1,0 +1,11 @@
+3.1 Assumption for documentation
+
+Data format for all Employee ID is an integer with length of 9.
+Age is an integer without any further restriction.
+Salary_rate is a number within [0, 9999999.99].
+Event_deposit is a numnber within [0, 99999.99]. (Max deposit is roughly one hundred thousand dollars.)
+Room number is a 4 digit number.
+Membership number is a 11 digit number.
+Direct bill account is a 20 char-long string.
+Length of stay is an integer greater than 0.
+
