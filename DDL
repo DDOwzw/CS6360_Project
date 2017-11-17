@@ -17,7 +17,7 @@ alter table employee add constraint fk_employee
 create table dinning
 (shift	varchar2(10)	null,
 type	varchar2(20)	null,
-employeeid numeric(9,0)    null
+employeeid numeric(9,0)    primary key
 )
 
 alter table dinning add constraint fk_dinning
@@ -26,7 +26,7 @@ alter table dinning add constraint fk_dinning
 create table concierge
 (
 concierge_experience_year number(3)	null,
-employeeid numeric(9,0)    null
+employeeid numeric(9,0)    primary key
 )
 
 alter table concierge add constraint fk_concierge
@@ -35,7 +35,7 @@ alter table concierge add constraint fk_concierge
 create table housekeeping
 (
 housekeeping_experience_year number(3)	null,
-employeeid numeric(9,0)    null
+employeeid numeric(9,0)    primary key
 )
 
 alter table housekeeping add constraint fk_housekeeping
@@ -44,8 +44,43 @@ alter table housekeeping add constraint fk_housekeeping
 create table receptionist
 (
 language varchar2(10)	null,
-employeeid numeric(9,0)    null
+employeeid numeric(9,0)    primary key
 )
 
-alter table housekeeping add constraint fk_housekeeping
+alter table receptionist add constraint fk_receptionist
+	foreign key (employeeid)	references employee (employeeid);
+
+create table tech_support
+(
+tech_support_licence varchar2(10)	null,
+employeeid numeric(9,0)    primary key
+)
+
+alter table tech_support add constraint fk_tech
+	foreign key (employeeid)	references employee (employeeid);
+
+create table management
+(
+title	varchar2(20)	null,
+employeeid numeric(9,0)    primary key
+)
+
+alter table management add constraint fk_management
+	foreign key (employeeid)	references employee (employeeid);
+
+create table catering
+(
+employeeid numeric(9,0)    primary key
+)
+
+alter table catering add constraint fk_catering
+	foreign key (employeeid)	references employee (employeeid);
+
+create table accountant
+(
+accountant_licence	varchar2(20)	null,
+employeeid numeric(9,0)    primary key
+)
+
+alter table accountant add constraint fk_accountant
 	foreign key (employeeid)	references employee (employeeid);
