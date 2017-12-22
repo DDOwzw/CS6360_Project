@@ -1,0 +1,225 @@
+--1
+'111111111','15','1500.00','li','il','chicago','35th','3548','60609','111111111'
+'111111112','25','2000.00','tom','tx','richardson','renner','800','75080','111111112'
+'111111113','35','1500.00','bill','ca','chicago','47th','456','60615','111111113'
+'111111114','45','3000.00','zong','ny','new york','jackson','658','75657','111111114'
+'111111115','55','5000.00','ali','ny','new york','martin','435','75754','111111115'
+'111111116','65','2000.00','john','ca','l.a.','21th','8908','75865','111111116'
+'111111117','75','3000.00','bob','tx','richardson','55th','4444','75567','111111117'
+'111111118','85','2000.00','jim','tx','richardson','90th','9767','75524','111111118'
+
+
+
+'211111111','15','1500.00','ming','wi','madison','5001','2214','53751',null
+'211111112','16','2500.00','tracy','wi','madison','sheboygan','221','53751',null
+'211111113','17','3500.00','alex','wi','madison','oak sok','295','53751',null
+'211111114','18','4500.00','eli','wi','madison','campebelle','848','53751',null
+'211111115','19','5500.00','clary','wi','madison','park','8484','53751',null
+'211111116','20','7500.00','clark','wi','madison','jeny','515','53751',null
+'211111117','21','3500.00','armstrong','wi','village','village','22','53751',null
+'211111118','31','5500.00','linken','wi','madison','lake','2214','52578',null
+'211111119','51','2500.00','trump','wi','madison','2th','5235','47257',null
+'211111110','41','1500.00','clinton','wi','madison','johnson','5757','53751',null
+'211111121','55','4000.00','yamato','wi','madison','Euclair','052','53751',null
+'211111122','32','1500.00','shigure','wi','madison','campus','242','53751',null
+
+
+
+--2
+'morning','lounge','111111111'
+
+--3
+'5','111111112'
+
+--4
+'3','111111113'
+
+--5
+'english','111111114'
+
+--6
+'wasd','111111115'
+
+--7
+'housekeeping manager','111111116'
+
+--8
+'111111117'
+
+--9
+'asdf','111111118'
+
+--10
+'8888',to_timestamp('11/17/1990','MM/DD/YYYY'),to_timestamp('11:15:30','HH24:MI:SS'),'111111111','55.55'
+'9999',to_timestamp('11/18/1991','MM/DD/YYYY'),to_timestamp('12-16-31','HH24:MI:SS'),'111111112','56.66'
+
+
+
+'1111',to_timestamp('11/19/2017','MM/DD/YYYY'),to_timestamp('12-16-31','HH24:MI:SS'),'111111112','626'
+'2222',to_timestamp('11/16/2017','MM/DD/YYYY'),to_timestamp('2-16-31','HH24:MI:SS'),'111111112','555'
+'3333',to_timestamp('11/15/2017','MM/DD/YYYY'),to_timestamp('11-16-31','HH24:MI:SS'),'111111112','577'
+'4444',to_timestamp('11/21/2017','MM/DD/YYYY'),to_timestamp('10-16-31','HH24:MI:SS'),'111111112','544'
+'5555',to_timestamp('11/20/2017','MM/DD/YYYY'),to_timestamp('11-16-31','HH24:MI:SS'),'111111112','555'
+'6666',to_timestamp('11/15/2017','MM/DD/YYYY'),to_timestamp('21-16-31','HH24:MI:SS'),'111111112','777'
+'7777',to_timestamp('11/18/2017','MM/DD/YYYY'),to_timestamp('18-16-31','HH24:MI:SS'),'111111112','888'
+'1234',to_timestamp('11/18/2017','MM/DD/YYYY'),to_timestamp('19-16-31','HH24:MI:SS'),'111111112','77.7'
+'4567',to_timestamp('11/18/2017','MM/DD/YYYY'),to_timestamp('17-16-31','HH24:MI:SS'),'111111112','79.79'
+'7890',to_timestamp('11/19/2017','MM/DD/YYYY'),to_timestamp('16-16-31','HH24:MI:SS'),'111111112','88.55'
+'2233',to_timestamp('11/20/2017','MM/DD/YYYY'),to_timestamp('08-16-31','HH24:MI:SS'),'111111112','90'
+'3344',to_timestamp('11/21/2017','MM/DD/YYYY'),to_timestamp('20-16-31','HH24:MI:SS'),'111111112','100'
+'5566',to_timestamp('11/18/2017','MM/DD/YYYY'),to_timestamp('21-16-31','HH24:MI:SS'),'111111112','1'
+
+
+--11
+'111111'
+'222222'
+'333333'
+'444444'
+
+
+'555555'
+'666666'
+'777777'
+'888888'
+'999999'
+'123456'
+
+--12
+'333333'
+'444444'
+
+--13
+'111111',to_timestamp('11/01/1995','MM/DD/YYYY'),'danly','male'
+'222222',to_timestamp('12/03/1996','MM/DD/YYYY'),'nancy','female'
+
+
+'555555',to_timestamp('01/02/1995','MM/DD/YYYY'),'jay','male'
+'666666',to_timestamp('03/04/1990','MM/DD/YYYY'),'alex','male'
+'777777',to_timestamp('05/06/1980','MM/DD/YYYY'),'rain','male'
+'888888',to_timestamp('07/08/1960','MM/DD/YYYY'),'elic','male'
+
+--14
+'12345678901'
+'12345678902'
+
+--15
+'1234','king','standard','50'
+'1235','queen','premium','50'
+'1101','king','suite','35'
+'1102','double','standard','55'
+
+--16
+'111111113','1234',to_timestamp('11/17/1990','MM/DD/YYYY'),to_timestamp('11-15-30','HH24:MI:SS')
+'111111113','1235',to_timestamp('11/17/1990','MM/DD/YYYY'),to_timestamp('11-15-30','HH24:MI:SS')
+
+--17
+'1234','111111','50',to_timestamp('11/17/1990','MM/DD/YYYY'),to_timestamp('11/16/1990','MM/DD/YYYY'),to_timestamp('11/17/1990','MM/DD/YYYY')
+
+--18
+'111111','12345678901'
+'222222','12345678902'
+
+
+--19
+'333333','9999'
+'444444','8888'
+
+
+
+'333333','1111'
+'333333','2222'
+'444444','3333'
+'333333','4444'
+'444444','5555'
+'333333','6666'
+'444444','7777'
+'444444','1234'
+'333333','4567'
+'333333','7890'
+'444444','2233'
+'333333','3344'
+'444444','5566'
+
+
+--20
+'9999','111111111','wsedfthyu','1357'
+'8888','111111111','xcsdfhgj','1649'
+
+--21
+'333333','987654',to_timestamp('11/11/2011','MM/DD/YYYY'),to_timestamp('12-13-14','HH24:MI:SS'),to_timestamp('12/01/2011','MM/DD/YYYY','123456')
+'444444','123456',to_timestamp('11/12/2013','MM/DD/YYYY'),to_timestamp('11-12-14','HH24:MI:SS'),to_timestamp('12/01/2013','MM/DD/YYYY','234567')
+
+
+--22
+'111111','qerwet'
+'222222','fjoeaigj'
+
+--23
+'111111','800000000'
+'222222','233333333'
+
+--24
+'111111','1234',to_timestamp('12-12-12','MM/DD/YYYY'),to_timestamp('10/11/2012','MM/DD/YYYY'),'10000'
+'222222','1235',to_timestamp('12-22-13','MM/DD/YYYY'),to_timestamp('10/22/2012','MM/DD/YYYY'),'19999'
+
+
+
+--25
+'111111','111111114','1234',to_timestamp('10/10/1999','MM/DD/YYYY'),'asdff',to_timestamp('11-11-11','HH24:MI:SS'), '10','0'
+'222222','111111114','1235',to_timestamp('10/10/2000','MM/DD/YYYY'),'rfwegbr',to_timestamp('11-11-11','HH24:MI:SS'),'9','0'
+'111111','111111114','1235',to_timestamp('12/17/2000','MM/DD/YYYY'),'fwwfe',to_timestamp('11-11-11','HH24:MI:SS'),'8','0'
+
+
+'111111','111111114','1234',to_timestamp('10/10/2017','MM/DD/YYYY'),'asdff',to_timestamp('11-11-11','HH24:MI:SS'), '1','0'
+'111111','111111114','1234',to_timestamp('01/02/2017','MM/DD/YYYY'),'asdff',to_timestamp('11-11-11','HH24:MI:SS'), '1','0'
+'111111','111111114','1234',to_timestamp('02/03/2017','MM/DD/YYYY'),'asdff',to_timestamp('11-11-11','HH24:MI:SS'), '1','0'
+'111111','111111114','1234',to_timestamp('03/04/2017','MM/DD/YYYY'),'asdff',to_timestamp('11-11-11','HH24:MI:SS'), '1','0'
+'111111','111111114','1234',to_timestamp('04/05/2017','MM/DD/YYYY'),'asdff',to_timestamp('11-11-11','HH24:MI:SS'), '1','0'
+'111111','111111114','1234',to_timestamp('05/06/2017','MM/DD/YYYY'),'asdff',to_timestamp('11-11-11','HH24:MI:SS'), '1','0'
+'111111','111111114','1234',to_timestamp('06/07/2017','MM/DD/YYYY'),'asdff',to_timestamp('11-11-11','HH24:MI:SS'), '1','0'
+'111111','111111114','1234',to_timestamp('07/08/2017','MM/DD/YYYY'),'asdff',to_timestamp('11-11-11','HH24:MI:SS'), '1','0'
+'111111','111111114','1234',to_timestamp('08/09/2017','MM/DD/YYYY'),'asdff',to_timestamp('11-11-11','HH24:MI:SS'), '1','0'
+'111111','111111114','1234',to_timestamp('09/10/2017','MM/DD/YYYY'),'asdff',to_timestamp('11-11-11','HH24:MI:SS'), '1','0'
+'111111','111111114','1234',to_timestamp('10/11/2017','MM/DD/YYYY'),'asdff',to_timestamp('11-11-11','HH24:MI:SS'), '1','0'
+'111111','111111114','1234',to_timestamp('11/12/2017','MM/DD/YYYY'),'asdff',to_timestamp('11-11-11','HH24:MI:SS'), '1','0'
+'111111','111111114','1234',to_timestamp('12/13/2017','MM/DD/YYYY'),'asdff',to_timestamp('11-11-11','HH24:MI:SS'), '1','0'
+'111111','111111114','1234',to_timestamp('12/14/2017','MM/DD/YYYY'),'asdff',to_timestamp('11-11-11','HH24:MI:SS'), '1','0'
+'111111','111111114','1234',to_timestamp('12/15/2017','MM/DD/YYYY'),'asdff',to_timestamp('11-11-11','HH24:MI:SS'), '1','0'
+'111111','111111114','1234',to_timestamp('01/10/2017','MM/DD/YYYY'),'asdff',to_timestamp('11-11-11','HH24:MI:SS'), '1','0'
+'111111','111111114','1234',to_timestamp('02/20/2017','MM/DD/YYYY'),'asdff',to_timestamp('11-11-11','HH24:MI:SS'), '1','0'
+'111111','111111114','1234',to_timestamp('03/10/2017','MM/DD/YYYY'),'asdff',to_timestamp('11-11-11','HH24:MI:SS'), '1','0'
+'111111','111111114','1234',to_timestamp('03/20/2017','MM/DD/YYYY'),'asdff',to_timestamp('11-11-11','HH24:MI:SS'), '1','0'
+'111111','111111114','1234',to_timestamp('02/11/2017','MM/DD/YYYY'),'asdff',to_timestamp('11-11-11','HH24:MI:SS'), '1','0'
+'111111','111111114','1234',to_timestamp('02/22/2017','MM/DD/YYYY'),'asdff',to_timestamp('11-11-11','HH24:MI:SS'), '1','0'
+'111111','111111114','1234',to_timestamp('03/13/2017','MM/DD/YYYY'),'asdff',to_timestamp('11-11-11','HH24:MI:SS'), '1','0'
+'111111','111111114','1234',to_timestamp('03/19/2017','MM/DD/YYYY'),'asdff',to_timestamp('11-11-11','HH24:MI:SS'), '1','0'
+
+'111111','111111114','1234',to_timestamp('04/24/2017','MM/DD/YYYY'),'asdff',to_timestamp('11-11-11','HH24:MI:SS'), '1','0'
+'111111','111111114','1234',to_timestamp('05/24/2017','MM/DD/YYYY'),'asdff',to_timestamp('11-11-11','HH24:MI:SS'), '1','0'
+'111111','111111114','1234',to_timestamp('06/24/2017','MM/DD/YYYY'),'asdff',to_timestamp('11-11-11','HH24:MI:SS'), '1','0'
+'111111','111111114','1234',to_timestamp('07/24/2017','MM/DD/YYYY'),'asdff',to_timestamp('11-11-11','HH24:MI:SS'), '1','0'
+'111111','111111114','1234',to_timestamp('08/23/2017','MM/DD/YYYY'),'asdff',to_timestamp('11-11-11','HH24:MI:SS'), '1','0'
+'111111','111111114','1234',to_timestamp('09/23/2017','MM/DD/YYYY'),'asdff',to_timestamp('11-11-11','HH24:MI:SS'), '1','0'
+'111111','111111114','1234',to_timestamp('10/23/2017','MM/DD/YYYY'),'asdff',to_timestamp('11-11-11','HH24:MI:SS'), '1','0'
+'111111','111111114','1234',to_timestamp('11/23/2017','MM/DD/YYYY'),'asdff',to_timestamp('11-11-11','HH24:MI:SS'), '1','0'
+'111111','111111114','1234',to_timestamp('12/23/2017','MM/DD/YYYY'),'asdff',to_timestamp('11-11-11','HH24:MI:SS'), '1','0'
+'111111','111111114','1234',to_timestamp('01/23/2017','MM/DD/YYYY'),'asdff',to_timestamp('11-11-11','HH24:MI:SS'), '1','0'
+'111111','111111114','1234',to_timestamp('02/23/2017','MM/DD/YYYY'),'asdff',to_timestamp('11-11-11','HH24:MI:SS'), '1','0'
+'111111','111111114','1234',to_timestamp('03/23/2017','MM/DD/YYYY'),'asdff',to_timestamp('11-11-11','HH24:MI:SS'), '1','0'
+'111111','111111114','1234',to_timestamp('11/11/2017','MM/DD/YYYY'),'asdff',to_timestamp('11-11-11','HH24:MI:SS'), '1','0'
+'111111','111111114','1234',to_timestamp('04/17/2017','MM/DD/YYYY'),'asdff',to_timestamp('11-11-11','HH24:MI:SS'), '1','0'
+'111111','111111114','1234',to_timestamp('05/17/2017','MM/DD/YYYY'),'asdff',to_timestamp('11-11-11','HH24:MI:SS'), '1','0'
+'111111','111111114','1234',to_timestamp('06/17/2017','MM/DD/YYYY'),'asdff',to_timestamp('11-11-11','HH24:MI:SS'), '1','0'
+'111111','111111114','1234',to_timestamp('07/17/2017','MM/DD/YYYY'),'asdff',to_timestamp('11-11-11','HH24:MI:SS'), '1','0'
+'111111','111111114','1234',to_timestamp('08/17/2017','MM/DD/YYYY'),'asdff',to_timestamp('11-11-11','HH24:MI:SS'), '1','0'
+'111111','111111114','1234',to_timestamp('09/17/2017','MM/DD/YYYY'),'asdff',to_timestamp('11-11-11','HH24:MI:SS'), '1','0'
+'111111','111111114','1234',to_timestamp('10/17/2017','MM/DD/YYYY'),'asdff',to_timestamp('11-11-11','HH24:MI:SS'), '1','0'
+'111111','111111114','1234',to_timestamp('11/17/2017','MM/DD/YYYY'),'asdff',to_timestamp('11-11-11','HH24:MI:SS'), '1','0'
+'111111','111111114','1234',to_timestamp('12/17/2017','MM/DD/YYYY'),'asdff',to_timestamp('11-11-11','HH24:MI:SS'), '1','0'
+'111111','111111114','1234',to_timestamp('06/30/2017','MM/DD/YYYY'),'asdff',to_timestamp('11-11-11','HH24:MI:SS'), '1','0'
+
+
+--26
+'333333','222222','9999','111111118',to_timestamp('11/11/1999','MM/DD/YYYY'),'100000'
+
+'444444','111111','8888','111111118',to_timestamp('12/12/2000','MM/DD/YYYY'),'233333'

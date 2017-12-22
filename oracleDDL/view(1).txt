@@ -1,0 +1,78 @@
+1. Available rooms: show the available rooms in	the hotel.
+
+2. Popular event manager: show the popular event managers who have helped	organize more than 10 events in	one month.
+
+3. Frequent customers: show the	individual customers who checked in at least	10 times this year.
+
+4. Popular rooms: show	the rooms that were checked in at least	30 times this	year.
+
+
+1.
+
+CREATE VIEW available_room (room_number) AS
+SELECT r.room_number
+FROM room r, check_in ci
+WHERE r.room_number != ci.room_number
+
+2.
+
+CREATE VIEW popular_event_manager (event_staff_id) AS
+select event_manager_id
+from event
+where TO_CHAR(event_date, 'MMDD') >= TO_CHAR(SYSDATE - 30, 'MMDD')  
+group by event_manager_id
+having count(event_id) > 10
+
+3.
+
+CREATE VIEW frequent_customer (customerID) AS
+
+SELECT i.customerID
+FROM individual i, check_in ci 
+WHERE  trunc(ci.Check_in_date, 'YEAR') = trunc(sysdate,'YEAR') and i.customerID = ci.customerID
+GROUP BY i.customerID
+having COUNT(ci.Check_in_date) >= 10
+
+4.
+
+CREATE VIEW popular_room (room_number) AS 
+select room_number, count(room_number)
+from check_in
+where trunc(check_in_date, 'YEAR') = trunc(sysdate,'YEAR')
+group by room_number
+having count (check_in_date) > 30
+;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
++++++++++++++++++++++++++++++++

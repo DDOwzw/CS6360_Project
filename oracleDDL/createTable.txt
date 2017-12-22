@@ -1,0 +1,323 @@
+--1
+create table employee
+(employeeid	numeric(9,0)	primary key,
+age	number(3)	not null,
+salary_rate	numeric(9,2),
+name	varchar2(20),
+state	varchar2(2),
+city	varchar2(20),
+street_name	varchar2(20),
+street_number	varchar2(20),
+zipcode	varchar2(10),
+event_staff_id	numeric(9,0) null
+)
+
+alter table employee add constraint fk_employee
+	foreign key (event_staff_id)	references employee (employeeid);
+
+--2
+create table dinning
+(shift	varchar2(10)	null,
+type	varchar2(20)	null,
+employeeid numeric(9,0)    primary key
+)
+
+alter table dinning add constraint fk_dinning
+	foreign key (employeeid)	references employee (employeeid);
+
+--3
+create table concierge
+(
+concierge_experience_year number(3)	null,
+employeeid numeric(9,0)    primary key
+)
+
+alter table concierge add constraint fk_concierge
+	foreign key (employeeid)	references employee (employeeid);
+
+--4
+create table housekeeping
+(
+housekeeping_experience_year number(3)	null,
+employeeid numeric(9,0)    primary key
+)
+
+alter table housekeeping add constraint fk_housekeeping
+	foreign key (employeeid)	references employee (employeeid);
+
+--5
+create table receptionist
+(
+language varchar2(10)	null,
+employeeid numeric(9,0)    primary key
+)
+
+alter table receptionist add constraint fk_receptionist
+	foreign key (employeeid)	references employee (employeeid);
+
+--6
+create table tech_support
+(
+tech_support_licence varchar2(10)	null,
+employeeid numeric(9,0)    primary key
+)
+
+alter table tech_support add constraint fk_tech
+	foreign key (employeeid)	references employee (employeeid);
+
+--7
+create table management
+(
+title	varchar2(20)	null,
+employeeid numeric(9,0)    primary key
+)
+
+alter table management add constraint fk_management
+	foreign key (employeeid)	references employee (employeeid);
+
+
+--8
+create table catering
+(
+employeeid numeric(9,0)    primary key
+)
+
+alter table catering add constraint fk_catering
+	foreign key (employeeid)	references employee (employeeid);
+
+
+--9
+create table accountant
+(
+accountant_licence	varchar2(20)	null,
+employeeid numeric(9,0)    primary key
+)
+
+alter table accountant add constraint fk_accountant
+	foreign key (employeeid)	references employee (employeeid);
+
+--10
+create table event
+(
+event_id	numeric(4,0) primary key,
+event_date	date,
+event_time	timestamp(6) with time zone,
+event_manager_id	numeric(9,0) not null,
+event_deposit		numeric(7,2)
+)
+
+alter table event add constraint fk_event
+	foreign key (event_manager_ID)	references employee (employeeid);
+
+-- 11. Client
+CREATE TABLE client
+(
+    customerid NUMERIC(6,0) PRIMARY KEY
+);
+
+-- 12. Organization
+CREATE TABLE organization
+(
+    customerid NUMERIC(6,0) PRIMARY KEY
+);
+
+ALTER TABLE organization add CONSTRAINT fk_organization
+	FOREIGN KEY (customerid)	REFERENCES client (customerid);
+
+-- 13. Individual
+CREATE TABLE individual
+(
+    customerid NUMERIC(6,0) PRIMARY KEY,
+    birthdate DATE NULL,
+    individual_name VARCHAR2(20) NULL,
+    individual_sex VARCHAR2(20) NULL
+);
+
+ALTER TABLE individual add CONSTRAINT fk_individual
+	FOREIGN KEY (customerid)	REFERENCES client (customerid);
+
+-- 14. Membersip
+CREATE TABLE membership
+(
+    membership_number NUMERIC(11,0) PRIMARY KEY
+);
+
+-- 15. Room
+CREATE TABLE room
+(
+    room_number NUMERIC(4,0) PRIMARY KEY,
+    bed_type VARCHAR2(20) NULL,
+    room_type VARCHAR2(20) NULL,
+    per_night_price INTEGER NULL
+);
+
+-- 16. Clear
+CREATE TABLE clear
+(
+    employeeid NUMERIC(9,0) NOT NULL,
+    room_number NUMERIC(4,0) NOT NULL,
+    cdate DATE NULL,
+    ctime TIMESTAMP(6) WITH TIME ZONE,
+    PRIMARY KEY (employeeid, room_number)
+);
+
+ALTER TABLE clear add CONSTRAINT fk_clear1
+	FOREIGN KEY (employeeid)	REFERENCES employee (employeeid);
+
+ALTER TABLE clear add CONSTRAINT fk_clear2
+    	FOREIGN KEY (room_number)   REFERENCES room (room_number);
+
+-- 17. check_out_bill
+CREATE TABLE check_out_bill
+(
+    room_number NUMERIC(6,0) NOT NULL,
+    customerid NUMERIC(6,0) NOT NULL,
+    check_out_bill_amount INTEGER NOT NULL,
+    check_out_bill_issed_date DATE NOT NULL,
+    check_in_date DATE NOT NULL,
+    check_out_date DATE NOT NULL,
+    PRIMARY KEY (room_number, customerid)
+);
+
+-- 18. has
+CREATE TABLE has
+(
+    customerid NUMERIC(6,0) NOT NULL,
+    membership_number NUMERIC(11,0) NOT NULL,
+    PRIMARY KEY (customerid, membership_number)
+);
+
+ALTER TABLE has add CONSTRAINT fk_has1
+    FOREIGN KEY (customerid)    REFERENCES client (customerid);
+
+ALTER TABLE has add CONSTRAINT fk_has2
+    FOREIGN KEY (membership_number) REFERENCES membership (membership_number);
+
+--19
+create table holds
+(
+customerid	number(6,0) not null,	
+event_id	number(4,0) not null,
+primary key (customerid, event_id)
+)
+
+alter table holds add constraint fk_holds
+	foreign key (customerid)	references Client(customerid);
+
+alter table holds add constraint fk_holds2	
+	foreign key (event_id)	references event (event_id);
+
+--20
+create table serve
+(
+event_id	number(4,0) not null,	
+employeeid	number(9,0) not null,
+oncall_speaker		char(20) null,
+oncall_number		number(4,0),
+primary key (event_id, employeeid)
+)
+
+alter table serve add constraint fk_serve1
+	foreign key (employeeid)	references employee (employeeid);
+
+alter table serve add constraint fk_serve2
+	foreign key (event_id)	references event (event_id);
+
+//////////////////////////////////////////
+--21
+create table bill_event_payment
+(
+customerid	numeric(6,0),
+event_bill_id	numeric(6,0),
+pdate	date,
+ptime TIMESTAMP(6) WITH TIME ZONE,
+date_of_payment	date,
+amount_of_event_payment numeric(8,2),
+primary key (customerid, event_bill_id)
+)
+
+alter table bill_event_payment add constraint fk_bill_event_payment
+	foreign key (customerid)	references organization (customerid);
+
+-- 22. direct_bill_account
+CREATE TABLE direct_bill_account
+(
+    customerid NUMERIC(6,0) NOT NULL,
+    direct_bill_account VARCHAR2(20) NOT NULL,
+    PRIMARY KEY (customerid, direct_bill_account)
+);
+
+ALTER TABLE direct_bill_account add CONSTRAINT fk_direct_bill_account
+    FOREIGN KEY (customerid)    REFERENCES client (customerid);
+
+-- 23. phone
+CREATE TABLE phone
+(
+    customerid NUMERIC(6,0) PRIMARY KEY,
+    phone NUMERIC(10,0) NULL
+)
+
+ALTER TABLE phone add CONSTRAINT fk_phone
+    FOREIGN KEY (customerid)    REFERENCES client (customerid);
+
+-- 24. check_out_payment_id
+CREATE TABLE check_out_payment_id
+(
+    customerid NUMERIC(6,0) NOT NULL,
+    room_number NUMERIC(4,0) NOT NULL,
+    cop_time TIMESTAMP(6) WITH TIME ZONE,
+    cop_date DATE NOT NULL,
+    cop_amount_of_payment NUMERIC(8,2),
+    PRIMARY KEY (customerid, room_number)
+);
+
+ALTER TABLE check_out_payment_id add CONSTRAINT fk_check_out_payment_id1
+    FOREIGN KEY (customerid)    REFERENCES client (customerid);
+
+ALTER TABLE check_out_payment_id add CONSTRAINT fk_check_out_payment_id2
+    FOREIGN KEY (room_number)   REFERENCES room (room_number);
+
+--25
+create table check_in
+(
+customerid	numeric(6,0) not null,
+employeeid	numeric(9,0) not null,
+room_number	numeric(4,0) not null,
+check_in_date	date not null,
+key_type	char(20),
+check_in_time	TIMESTAMP WITH LOCAL TIME ZONE not null,
+length_of_stay	numeric(9,0),
+lounge	numeric(1,0)  default '0',
+primary key (customerid, employeeid, room_number, check_in_date, check_in_time)
+)
+
+alter table check_in add constraint fk_check_in1
+	foreign key (employeeid)	references receptionist(employeeid);
+
+alter table check_in add constraint fk_check_in2
+	foreign key (customerid)	references client(customerid);
+
+alter table check_in add constraint fk_check_in3
+	foreign key (room_number)	references room(room_number);
+
+--26
+create table bill_for_event
+(
+customerid	number(6,0) not null,
+event_bill_id	number(6,0),
+event_id	number(4,0) not null,
+employeeid	number(9,0) not null,
+bill_event_date_issued		date,
+bill_event_amount		number(8,2),
+primary key (customerid, event_bill_id)
+)
+
+alter table bill_for_event add constraint fk_bill_for_event1
+	foreign key (employeeid)	references accountant(employeeid);
+
+alter table bill_for_event add constraint fk_bill_for_event2
+	foreign key (customerid)	references organization (customerid);
+
+alter table bill_for_event add constraint fk_bill_for_event3
+	foreign key (event_id)	references event (event_id);
+

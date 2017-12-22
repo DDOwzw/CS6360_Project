@@ -1,0 +1,142 @@
+--1
+select Count(employeeid) as nofEmployees
+from dinning
+where type = 'lounge' or type = 'bar'
+
+
+-- 2
+SELECT AVG(Salary_rate)
+FROM employee
+WHERE employee.employeeid IN
+(SELECT employeeid
+FROM receptionist)
+
+
+--3
+
+select *
+from individual i
+where i.CUSTOMERID in (
+
+select customerid
+from (
+
+select c.customerid, Sum(c.COP_AMOUNT_OF_PAYMENT)
+from check_out_payment_id c
+where TRUNC(c.cop_date, 'YEAR') = TRUNC(SYSDATE, 'YEAR')
+group by c.customerid
+having Sum(c.COP_AMOUNT_OF_PAYMENT) > 1000
+))
+
+-- 4
+SELECT Check_out_bill_amount
+FROM Check_out_bill
+ORDER BY Check_in_date ASC
+
+--5
+
+select *
+from individual i
+where i.CUSTOMERID in (
+
+select customerid
+from (
+select c.customerid, Sum(c.length_of_stay)
+from check_in c
+where TRUNC(c.check_in_date, 'YEAR') = TRUNC(SYSDATE, 'YEAR')
+group by c.customerid
+having Sum(c.length_of_stay) >= 15
+)
+);
+
+
+
+
+
+-- 6
+select avg(k.AGE_TODAY)
+from
+(
+select d.customerid, TRUNC((SYSDATE - TO_DATE(d.bd, 'YYYY-MM-DD'))/ 365.25) AS AGE_TODAY
+from(
+
+select birthdate as bd, i.customerid
+from individual i
+where i.customerid in
+(
+select customerid
+from check_in c
+where c.employeeid in
+(
+select r.employeeid
+from receptionist r
+where r.language = 'Spanish'
+))
+) d
+) k
+
+
+--7
+select *
+from organization o
+where o.customerid in
+(
+select h.customerid
+from holds h
+where h.customerid in
+(
+select b.customerid
+from Bill_event_payment b
+group by b.CUSTOMERID
+having Sum(b.amount_of_event_payment) > 2000
+)
+group by h.customerid
+having Count(Event_id) >= 2
+);
+
+-- 8
+select *
+from(
+select b.bill_event_amount
+from bill_for_event b
+where b.event_id in
+(
+select event_id
+from POPULAR_EVENT_MANAGER, event
+)
+order by b.bill_event_amount desc
+)
+where rownum =  1
+
+--9
+select *
+from event e
+where e.event_id in (
+select event_id
+from(
+select b.event_id, b.customerid, max(bill_event_amount)
+from bill_for_event b
+group by b.event_id, b.customerid
+))
+
+-- 10
+select *
+from(
+select c.check_in_date
+from
+(
+select *
+from
+(
+select e.room_number, Count(e.room_number) as shax
+from check_in e
+group by e.room_number
+order by shax desc
+)
+where rownum = 1
+) d, check_in c
+
+where d.room_number = c.room_number
+order by c.check_in_date desc
+)
+where rownum = 1
